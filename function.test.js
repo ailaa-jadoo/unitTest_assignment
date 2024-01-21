@@ -1,4 +1,4 @@
-const { sum, getElementAtIndex, removeElement } = require("./function");
+const { sum, getElementAtIndex, removeElement, popOperation } = require("./function");
 
 describe("sum function", () => {
   test("adds 1 + 2 to equal 3", () => {
@@ -24,8 +24,6 @@ describe("sum function", () => {
   });
 });
 
-
-
 describe("getElementAtIndex", () => {
   test("should return the element at the specified index", () => {
     const arr = [1, 2, 3, 4, 5];
@@ -47,8 +45,6 @@ describe("getElementAtIndex", () => {
     expect(() => getElementAtIndex(arr, 5)).toThrow("Index out of bounds");
   });
 });
-
-
 
 describe("removeElement", () => {
   test("removes an element that exists in the array", () => {
@@ -72,5 +68,25 @@ describe("removeElement", () => {
 
     // The array should remain empty
     expect(result).toEqual([]);
+  });
+});
+
+describe("popOperation", () => {
+  test("removes the last element from the array", () => {
+    const arr = [1, 2, 3, 4];
+    popOperation(arr);
+    expect(arr).toEqual([1, 2, 3]);
+  });
+
+  test("returns the removed element", () => {
+    const arr = [1, 2, 3];
+    const result = popOperation(arr);
+    expect(result).toBe(3);
+  });
+
+  test("returns undefined for an empty array", () => {
+    const arr = [];
+    const result = popOperation(arr);
+    expect(result).toBeUndefined();
   });
 });

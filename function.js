@@ -1,6 +1,6 @@
 function sum(a, b) {
-  if (typeof a !== 'number' || typeof b !== 'number') {
-    throw new Error('Invalid input: sum function expects numeric values');
+  if (typeof a !== "number" || typeof b !== "number") {
+    throw new Error("Invalid input: sum function expects numeric values");
   }
 
   return a + b;
@@ -23,5 +23,8 @@ function removeElement(arr, element) {
   return arr;
 }
 
+function popOperation(arr) {
+  return arr.pop();
+}
 
-module.exports = {sum, getElementAtIndex, removeElement};
+module.exports = { sum, getElementAtIndex, removeElement, popOperation };
